@@ -1,0 +1,60 @@
+body {
+  margin: 10px; 
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a.hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.mw-content-ltr {
+  direction: ltr;
+}
+
+ul.gallery {
+  margin: 2px;
+  padding: 2px;
+  display: block;
+}
+
+li.gallerybox {
+  vertical-align: top;
+  display: inline-block;
+  margin: 2px;
+}
+
+.pinbox {
+  width: 130px;
+}
+
+div.thumb {
+  width: 120px;
+  margin: 15px auto;
+  border: 1px solid #000;
+  background-color: #f9f9f9;
+  margin: 0px;
+
+}
+
+.App {
+  text-align: center;
+}
+
+.pinname {
+  text-align: center;
+  font-size: 80%;
+}
+.pinset {
+  text-align: center;
+  font-size: 60%;
+  font-style: italic;
+}
+
+img {
+  border: none;
+  vertical-align: middle;
+}
