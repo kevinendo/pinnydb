@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import PinDataService from "../services/pin";
 import { Link } from "react-router-dom";
@@ -36,7 +35,7 @@ const PinsList = props => {
     PinDataService.find(query, by)
       .then(response => {
         console.log(response.data);
-        setPins(response.data.pins);
+        setPins(response.data);
       })
       .catch(e => {
         console.log(e);
@@ -44,18 +43,22 @@ const PinsList = props => {
   };
 
   const findByName = () => {
-    find(searchName, "name")
+    find("pin_name", searchName)
   };
 
   return(
     <div class="mw-content-ltr">
+            <form class="search-box">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" placeHolder="Search by Name" value={searchName} onChange={onChangeSearchName}/>
+              <button class="btn btn-outline-success" type="button" onClick={findByName}>Search</button>
+          </form>
       <ul class="gallery mw-gallery-traditional">
       {
           pins.map(pin => (
             <li class="gallerybox">
                 <div class="pinbox">
                   <Link to={"/pinDetail/"+pin.pin_id.$numberInt}>
-                    <div class="thumb"><img width="120" src={"https://pinnydb.netlify.app/images/" + pin.category.replace(/ /g, '') + "/" + pin.main_img}/></div>
+                    <div class="thumb"><img width="100" src={"https://pinnydb.netlify.app/images/" + pin.category.replace(/ /g, '') + "/" + pin.main_img}/></div>
                   
                     <div class="pinname">{pin.pin_name}</div>
                     <div class="pinset">{pin.set}</div></Link>

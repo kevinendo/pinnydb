@@ -17,7 +17,7 @@ const PinDetail = props => {
     property: false,
     tags: false,
     type: "",
-    set: "",
+    set: false,
     price: "",
     tier: 0,
     notes: "",
@@ -26,6 +26,7 @@ const PinDetail = props => {
   };
 
 const [pinInfo, setPin] = useState(initialPinState);
+const [pinSet, setPins] = useState([]);
 
 const getPin = pin_id => {
   PinDataService.get(pin_id)
@@ -37,27 +38,62 @@ const getPin = pin_id => {
     });
 };
 
+const retrievePins = set => {
+  PinDataService.getSet(set)
+    .then(response => {
+      setPins(response.data);        
+    })
+    .catch(e => {
+      console.log(e);
+    });
+}; 
+
 useEffect(() => {
   getPin(props.match.params.pin_id);
 }, [props.match.params.pin_id]);
+
+retrievePins(pinInfo.set);
 
   return (
     <div>
       {pinInfo ? (
         <div>
   <div>
-  <h2>{pinInfo.pin_name}</h2>
-  <img width="140" src={"https://pinnydb.netlify.app/images/" + pinInfo.category.replace(/ /g, '') + "/" + pinInfo.main_img}/>
-    <div>Release Date: {pinInfo.date}</div>
-    <div>Company: {pinInfo.company}</div>
-    { pinInfo.property ? <div>Property: {pinInfo.property}</div> : <div></div> }
+  <h3>{pinInfo.pin_name}</h3>
+<img width="140" src={"https://pinnydb.netlify.app/images/" + pinInfo.category.replace(/ /g, '') + "/" + pinInfo.main_img}/>
+    <div> Release Date: {pinInfo.date}</div>
+    <div>Company: <Link to={"/company/"+pinInfo.company}>{pinInfo.company}</Link></div>
+    <div>Type: <Link to={"/type/"+pinInfo.type}>{pinInfo.type}</Link></div>
+    { pinInfo.property ? <div>Property: <Link to={"/property/"+pinInfo.property}>{pinInfo.property}</Link></div> : <div></div> }
     { pinInfo.artist ? <div>Artist: {pinInfo.artist}</div> : <div></div> }
-
+<br/>
     <p>{pinInfo.notes}</p>
     { pinInfo.url ? <div>More Info: <a href={pinInfo.url} target="_blank">{pinInfo.url}</a></div> : <div></div> }
 <hr/>
-    { pinInfo.tags ? <div>{pinInfo.tags}</div> : <div></div> }
     </div>
+    
+  { pinInfo.set ? (
+    <div>
+  <div>{pinInfo.set}</div> 
+  <div>
+    <ul class="gallery mw-gallery-traditional">
+      {
+          pinSet.reverse().map(pin => (
+            <li class="gallerybox">
+                <div class="pinbox">
+                  <Link to={"/pinDetail/"+pin.pin_id.$numberInt}>
+                    <div class="thumb"><img width="100" src={"https://pinnydb.netlify.app/images/" + pin.category.replace(/ /g, '') + "/" + pin.main_img}/></div>
+                    <div class="pinname">{pin.pin_name}</div></Link>
+                </div>
+           </li>
+          ))
+      }
+      </ul>
+      <hr/>
+  </div> 
+  </div>
+   ) : (<div></div>) }
+
 </div>
       ) : (
         <div>No Pin</div>
@@ -68,3 +104,4 @@ useEffect(() => {
 }
 
 export default PinDetail;
+

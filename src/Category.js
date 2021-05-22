@@ -9,23 +9,15 @@ import GlobalNav from "./components/global-nav";
 
 
 
-function App() {
+function Category() {
 
   return (
     <div>
 <GlobalNav/>
-
       <div>
         <Switch>
-          <Route exact path={["/"]} component={PinsList} />
           <Route 
-            path="/pinDetail/:pin_id"
-            render={(props) => (
-              <PinDetail {...props} />
-            )}
-          />
-          <Route 
-            path="/:by/:query"
+            path="/:query"
             render={(props) => (
               <PinsListSubset {...props} />
             )}
@@ -36,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default Category;

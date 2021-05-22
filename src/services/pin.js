@@ -16,6 +16,12 @@ class PinDataService {
     getCategory(query) {
         return http.get(`/pins?category=${query}`);
     }
+    getSet(query) {
+        return http.get(`/pins?set=${query}`);
+    }
+    getTags(query) {
+        return http.get(`/pins?tags=${query}`);
+    }
 
 }
 

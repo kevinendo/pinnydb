@@ -1,5 +1,6 @@
 body {
   margin: 10px; 
+  margin-top: 70px;
 }
 a {
   text-decoration: none;
@@ -16,8 +17,8 @@ a.hover {
 }
 
 ul.gallery {
-  margin: 2px;
-  padding: 2px;
+  margin: 0px;
+  padding: 0px;
   display: block;
 }
 
@@ -28,16 +29,14 @@ li.gallerybox {
 }
 
 .pinbox {
-  width: 130px;
+  width: 100px;
 }
 
 div.thumb {
-  width: 120px;
-  margin: 15px auto;
+  width: 100px;
+  margin: 0px auto;
   border: 1px solid #000;
   background-color: #f9f9f9;
-  margin: 0px;
-
 }
 
 .App {
@@ -57,4 +56,16 @@ div.thumb {
 img {
   border: none;
   vertical-align: middle;
+}
+
+
+.search-box {
+  position: fixed;
+  top: 7px;
+  right: 70px;
+  width: 300px;
+  z-index: 9998!important;
+  display: flex;
+  flex-flow: row-wrap;
+  align-items: center;
 }
