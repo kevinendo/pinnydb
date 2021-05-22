@@ -58,7 +58,7 @@ retrievePins(pinInfo.set);
     <div>
       {pinInfo ? (
         <div>
-  <div>
+  <div class="detail-box">
   <h3>{pinInfo.pin_name}</h3>
 <img width="140" src={"https://pinnydb.netlify.app/images/" + pinInfo.category.replace(/ /g, '') + "/" + pinInfo.main_img}/>
     <div><b>Category:</b> <Link to={"/category/"+pinInfo.category}>{pinInfo.category}</Link></div>    
@@ -70,12 +70,11 @@ retrievePins(pinInfo.set);
 <br/>
     <p>{pinInfo.notes}</p>
     { pinInfo.url ? <div><b>URL:</b> <a href={pinInfo.url} target="_blank">{pinInfo.url}</a></div> : <div></div> }
-<hr/>
     </div>
     
   { pinInfo.set ? (
     <div>
-  <div>{pinInfo.set}</div> 
+  <div class="set-name">{pinInfo.set}</div> 
   <div>
     <ul class="gallery mw-gallery-traditional">
       {
@@ -90,7 +89,6 @@ retrievePins(pinInfo.set);
           ))
       }
       </ul>
-      <hr/>
   </div> 
   </div>
    ) : (<div></div>) }

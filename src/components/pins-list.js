@@ -76,7 +76,7 @@ if (parseInt(page) == 0)  {
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" placeHolder="Search by Name" value={searchName} onChange={onChangeSearchName}/>
               <button class="btn btn-outline-success" type="button" onClick={findByName}>Search</button>
           </form>
-          <div align="right"><a href={prevPage}>Prev</a> | <a href={nextPage}>Next</a></div>
+          <div class="page-nav"><a href={prevPage}>&lt; PREV</a> | <a href={nextPage}>NEXT &gt;</a></div>
       <ul class="gallery mw-gallery-traditional">
       {
           pins.map(pin => (
@@ -92,6 +92,7 @@ if (parseInt(page) == 0)  {
           ))
       }
       </ul>
+      <div class="page-nav"><a href={prevPage}>&lt; PREV</a> | <a href={nextPage}>NEXT &gt;</a></div>
       </div>
 );
 }

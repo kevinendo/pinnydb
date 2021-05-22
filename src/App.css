@@ -1,6 +1,7 @@
 body {
   margin: 10px; 
-  margin-top: 70px;
+  margin-top: 55px;
+  background-color: lightgray;
 }
 a {
   text-decoration: none;
@@ -46,6 +47,7 @@ div.thumb {
 .pinname {
   text-align: center;
   font-size: 80%;
+  line-height: 120%;
 }
 .pinset {
   text-align: center;
@@ -68,4 +70,24 @@ img {
   display: flex;
   flex-flow: row-wrap;
   align-items: center;
+}
+
+.page-nav {
+  text-align: center;
+  font-size: smaller;
+}
+
+.detail-box {
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 65px;
+}
+
+.set-name {
+  margin-top: 10px;
+  font-size:medium;
+}
+.dropdown-item {
+  font-size:smaller;
+  line-height: 100%;
 }
