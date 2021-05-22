@@ -61,14 +61,15 @@ retrievePins(pinInfo.set);
   <div>
   <h3>{pinInfo.pin_name}</h3>
 <img width="140" src={"https://pinnydb.netlify.app/images/" + pinInfo.category.replace(/ /g, '') + "/" + pinInfo.main_img}/>
-    <div> Release Date: {pinInfo.date}</div>
-    <div>Company: <Link to={"/company/"+pinInfo.company}>{pinInfo.company}</Link></div>
-    <div>Type: <Link to={"/type/"+pinInfo.type}>{pinInfo.type}</Link></div>
-    { pinInfo.property ? <div>Property: <Link to={"/property/"+pinInfo.property}>{pinInfo.property}</Link></div> : <div></div> }
-    { pinInfo.artist ? <div>Artist: {pinInfo.artist}</div> : <div></div> }
+    <div><b>Category:</b> <Link to={"/category/"+pinInfo.category}>{pinInfo.category}</Link></div>    
+    <div> <b>Release Date:</b> {pinInfo.date}</div>
+    <div><b>Company:</b> <Link to={"/company/"+pinInfo.company}>{pinInfo.company}</Link></div>
+    <div><b>Type:</b> <Link to={"/type/"+pinInfo.type}>{pinInfo.type}</Link></div>
+    { pinInfo.property ? <div><b>Property:</b> <Link to={"/property/"+pinInfo.property}>{pinInfo.property}</Link></div> : <div></div> }
+    { pinInfo.artist ? <div><b>Artist:</b> {pinInfo.artist}</div> : <div></div> }
 <br/>
     <p>{pinInfo.notes}</p>
-    { pinInfo.url ? <div>More Info: <a href={pinInfo.url} target="_blank">{pinInfo.url}</a></div> : <div></div> }
+    { pinInfo.url ? <div><b>URL:</b> <a href={pinInfo.url} target="_blank">{pinInfo.url}</a></div> : <div></div> }
 <hr/>
     </div>
     

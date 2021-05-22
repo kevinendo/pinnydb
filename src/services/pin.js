@@ -1,8 +1,8 @@
 import http from "../services/http-common";
 
 class PinDataService {
-    getAll() {
-        return http.get('/pins');
+    getAll(page) {
+        return http.get(`/allPins?page=${page}`);
     }
 
     get(pin_id) {

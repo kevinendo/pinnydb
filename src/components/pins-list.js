@@ -2,10 +2,34 @@ import React, { useState, useEffect } from "react";
 import PinDataService from "../services/pin";
 import { Link } from "react-router-dom";
 import '../App.css'
+import { useLocation } from 'react-router-dom'
+import queryString from 'query-string'
 
 const PinsList = props => {
   const [pins, setPins] = useState([]);
   const [searchName, setSearchName ] = useState("");
+let page = 0;
+const { search } = useLocation();
+const values = queryString.parse(search);
+if (values.page != null) {
+  page = values.page;
+}
+let prevPage = "";
+let nextPage = "";
+
+if (parseInt(page) == 0)  {
+  prevPage = "/?page=12";
+  nextPage = "/?page=" + (parseInt(page)+1);
+} else if (parseInt(page) == 12) {
+  prevPage = "/?page=" + (parseInt(page)-1);
+  nextPage = "/?page=0";
+} else {
+  prevPage = "/?page=" + (parseInt(page)-1);
+  nextPage = "/?page=" + (parseInt(page)+1);
+}
+
+
+
 
   useEffect(() => {
     retrievePins();
@@ -17,7 +41,7 @@ const PinsList = props => {
   };
 
   const retrievePins = () => {
-    PinDataService.getAll()
+    PinDataService.getAll(page)
       .then(response => {
         console.log(response.data);
         setPins(response.data);        
@@ -52,6 +76,7 @@ const PinsList = props => {
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" placeHolder="Search by Name" value={searchName} onChange={onChangeSearchName}/>
               <button class="btn btn-outline-success" type="button" onClick={findByName}>Search</button>
           </form>
+          <div align="right"><a href={prevPage}>Prev</a> | <a href={nextPage}>Next</a></div>
       <ul class="gallery mw-gallery-traditional">
       {
           pins.map(pin => (
