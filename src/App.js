@@ -7,7 +7,8 @@ import PinsListSubset from "./components/pins-list-subset";
 import PinDetail from "./components/pin-detail";
 import GlobalNav from "./components/global-nav";
 import About from "./components/about";
-
+import ArticleList from "./components/article-list";
+import Article from "./components/article";
 
 function App() {
 
@@ -18,7 +19,14 @@ function App() {
       <div>
         <Switch>
           <Route exact path={["/"]} component={PinsList} />
-          <Route exact path={["/about"]} component={About} />
+          <Route exact path={["/articles"]} component={ArticleList} />
+          <Route 
+            path="/article/:article_id"
+            render={(props) => (
+              <Article {...props} />
+            )}
+          />
+
           <Route 
             path="/pinDetail/:pin_id"
             render={(props) => (

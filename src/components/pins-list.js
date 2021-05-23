@@ -13,16 +13,19 @@ const { search } = useLocation();
 const values = queryString.parse(search);
 if (values.page != null) {
   page = values.page;
+} else {
+  page = 1;
 }
+
 let prevPage = "";
 let nextPage = "";
 
-if (parseInt(page) == 0)  {
-  prevPage = "/?page=12";
+if (parseInt(page) == 1)  {
+  prevPage = "/?page=13";
   nextPage = "/?page=" + (parseInt(page)+1);
-} else if (parseInt(page) == 12) {
+} else if (parseInt(page) == 13) {
   prevPage = "/?page=" + (parseInt(page)-1);
-  nextPage = "/?page=0";
+  nextPage = "/?page=1";
 } else {
   prevPage = "/?page=" + (parseInt(page)-1);
   nextPage = "/?page=" + (parseInt(page)+1);
@@ -100,7 +103,7 @@ if (parseInt(page) == 0)  {
           ))
       }
       </ul>
-      <div class="page-nav"><a href={prevPage}>&lt; PREV</a> · <a href="/?page=0">0</a> <a href="/?page=1">1</a> <a href="/?page=2">2</a> <a href="/?page=3">3</a> <a href="/?page=4">4</a> <a href="/?page=5">5</a> <a href="/?page=6">6</a> <a href="/?page=7">7</a> <a href="/?page=8">8</a> <a href="/?page=9">9</a> <a href="/?page=10">10</a> <a href="/?page=11">11</a> <a href="/?page=12">12</a> · <a href={nextPage}>NEXT &gt;</a></div>
+      <div class="page-nav"><a href={prevPage}>&lt; PREV</a> · <a href="/?page=1">1</a> <a href="/?page=2">2</a> <a href="/?page=3">3</a> <a href="/?page=4">4</a> <a href="/?page=5">5</a> <a href="/?page=6">6</a> <a href="/?page=7">7</a> <a href="/?page=8">8</a> <a href="/?page=9">9</a> <a href="/?page=10">10</a> <a href="/?page=11">11</a> <a href="/?page=12">12</a> <a href="/?page=13">13</a> · <a href={nextPage}>NEXT &gt;</a></div>
       </div>
 );
 }

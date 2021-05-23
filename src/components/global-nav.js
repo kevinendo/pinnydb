@@ -73,7 +73,7 @@ function GlobalNav() {
               </ul>
             </li>    
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/tags/West" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 West
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -88,7 +88,7 @@ function GlobalNav() {
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/tags/East" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 East
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -103,7 +103,7 @@ function GlobalNav() {
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/tags/Aus" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Aus
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -118,7 +118,7 @@ function GlobalNav() {
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/tags/South" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 South
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -131,7 +131,7 @@ function GlobalNav() {
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/tags/Unplugged" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Unp
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
