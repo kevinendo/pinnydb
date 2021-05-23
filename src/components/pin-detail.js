@@ -85,7 +85,7 @@ const pinTags = pinInfo.tags.split(", ");
       {
         pinTags.map(tag => (
           <div>
-            <li class="tag-list-item"><Link to={"/tags/"+tag}>{tag}</Link></li>
+            <li class="tag-list-item"><Link to={"/tags/"+tag}>{tag.toUpperCase()}</Link></li>
           </div>
         ))
       }

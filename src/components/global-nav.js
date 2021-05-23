@@ -171,7 +171,7 @@ function GlobalNav() {
                 <li><a class="dropdown-item" href="/category/Other%2014">2014</a></li>
                 <li><a class="dropdown-item" href="/category/Other%2013">2013</a></li>
               </ul>
-            </li>                                 
+            </li>                                            
           </ul>
         </div>
       </div>
