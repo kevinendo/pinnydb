@@ -15,7 +15,7 @@ const PinDetail = props => {
     year: "",
     company: "",
     property: false,
-    tags: false,
+    tags: "",
     type: "",
     set: false,
     price: "",
@@ -25,8 +25,11 @@ const PinDetail = props => {
     artist: false
   };
 
+
 const [pinInfo, setPin] = useState(initialPinState);
 const [pinSet, setPins] = useState([]);
+
+
 
 const getPin = pin_id => {
   PinDataService.get(pin_id)
@@ -53,6 +56,7 @@ useEffect(() => {
 }, [props.match.params.pin_id]);
 
 retrievePins(pinInfo.set);
+const pinTags = pinInfo.tags.split(", ");
 
   return (
     <div>
@@ -60,16 +64,36 @@ retrievePins(pinInfo.set);
         <div>
   <div class="detail-box">
   <h3>{pinInfo.pin_name}</h3>
-<img width="140" src={"https://pinnydb.netlify.app/images/" + pinInfo.category.replace(/ /g, '') + "/" + pinInfo.main_img}/>
-    <div><b>Category:</b> <Link to={"/category/"+pinInfo.category}>{pinInfo.category}</Link></div>    
-    <div> <b>Release Date:</b> {pinInfo.date}</div>
-    <div><b>Company:</b> <Link to={"/company/"+pinInfo.company}>{pinInfo.company}</Link></div>
-    <div><b>Type:</b> <Link to={"/type/"+pinInfo.type}>{pinInfo.type}</Link></div>
-    { pinInfo.property ? <div><b>Property:</b> <Link to={"/property/"+pinInfo.property}>{pinInfo.property}</Link></div> : <div></div> }
-    { pinInfo.artist ? <div><b>Artist:</b> {pinInfo.artist}</div> : <div></div> }
-<br/>
+    <div class="row">
+      <div class="column left">
+        <img width="140" src={"https://pinnydb.netlify.app/images/" + pinInfo.category.replace(/ /g, '') + "/" + pinInfo.main_img}/>
+      </div>
+      <div class="column right">
+        <div><b>Category:</b> <Link to={"/category/"+pinInfo.category}>{pinInfo.category}</Link></div>    
+        <div> <b>Release Date:</b> {pinInfo.date}</div>
+        <div><b>Company:</b> <Link to={"/company/"+pinInfo.company}>{pinInfo.company}</Link></div>
+        <div><b>Type:</b> <Link to={"/type/"+pinInfo.type}>{pinInfo.type}</Link></div>
+        { pinInfo.property ? <div><b>Property:</b> <Link to={"/property/"+pinInfo.property}>{pinInfo.property}</Link></div> : <div></div> }
+        { pinInfo.artist ? <div><b>Artist:</b> {pinInfo.artist}</div> : <div></div> }
+      </div>
+    </div>
+    <br/>
     <p>{pinInfo.notes}</p>
-    { pinInfo.url ? <div><b>URL:</b> <a href={pinInfo.url} target="_blank">{pinInfo.url}</a></div> : <div></div> }
+    { pinInfo.url ? <div><b>URL:</b> <a href={pinInfo.url} target="_blank">{pinInfo.url}</a><br/></div> : <div></div> }
+    { (pinInfo.tags != "") ? (
+    <ul class="tag-list">
+      {
+        pinTags.map(tag => (
+          <div>
+            <li class="tag-list-item"><Link to={"/tags/"+tag}>{tag}</Link></li>
+          </div>
+        ))
+      }
+    </ul>
+    ) : (
+      <div></div>
+    )
+}
     </div>
     
   { pinInfo.set ? (

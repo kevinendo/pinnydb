@@ -7,7 +7,7 @@ function GlobalNav() {
  
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">PinnyDB</a>
+        <a class="navbar-brand" href="/"><img width="30" src="/pinnydb_cat.png"></img>&nbsp;&nbsp;PinnyDB</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -132,7 +132,7 @@ function GlobalNav() {
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Unplugged
+                Unp
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="/category/Unplugged%2020">2020</a></li>

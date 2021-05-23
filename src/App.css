@@ -19,6 +19,7 @@ a.hover {
 
 ul.gallery {
   margin: 0px;
+  margin-top: 65px;
   padding: 0px;
   display: block;
 }
@@ -72,9 +73,26 @@ img {
   align-items: center;
 }
 
+@media screen and (max-width: 1170px) {
+  .search-box {
+    position: static;  
+    right: 0px;
+    left: 250px;
+    top: 7px;
+    width: 300px;
+    padding: 15px;    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;    
+  }
+  ul.gallery {  
+    margin-top: 0px;
+    }  
+}
+
 .page-nav {
   text-align: center;
-  font-size: smaller;
+  font-size: medium;
 }
 
 .detail-box {
@@ -90,4 +108,55 @@ img {
 .dropdown-item {
   font-size:smaller;
   line-height: 100%;
+}
+
+.tag-list {
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+  overflow: hidden;
+}
+.tag-list-item {
+  float: left;
+  margin-right: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: lightgray;
+}
+
+@media all and (min-width: 800px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+
+.footer-text {
+  font-size: x-small;
+}
+
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 150px;
+}
+
+.right {
+  width: 75%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.mw-content-ltr {
+  margin-top: 60px;
 }

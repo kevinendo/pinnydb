@@ -6,7 +6,7 @@ import PinsList from "./components/pins-list";
 import PinsListSubset from "./components/pins-list-subset";
 import PinDetail from "./components/pin-detail";
 import GlobalNav from "./components/global-nav";
-
+import About from "./components/about";
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
       <div>
         <Switch>
           <Route exact path={["/"]} component={PinsList} />
+          <Route exact path={["/about"]} component={About} />
           <Route 
             path="/pinDetail/:pin_id"
             render={(props) => (
@@ -32,6 +33,7 @@ function App() {
           />          
         </Switch>
       </div>
+      <About/>
     </div>
   );
 }

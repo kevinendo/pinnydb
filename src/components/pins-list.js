@@ -40,6 +40,12 @@ if (parseInt(page) == 0)  {
     setSearchName(searchName);
   };
 
+  const handleKeypress = e => {
+  if (e.keyCode === 13) {
+    findByName();
+  }
+};
+
   const retrievePins = () => {
     PinDataService.getAll(page)
       .then(response => {
@@ -66,17 +72,19 @@ if (parseInt(page) == 0)  {
       });
   };
 
-  const findByName = () => {
+  const findByName = e => {
+    e.preventDefault();
     find("pin_name", searchName)
   };
+
+
 
   return(
     <div class="mw-content-ltr">
             <form class="search-box">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" placeHolder="Search by Name" value={searchName} onChange={onChangeSearchName}/>
-              <button class="btn btn-outline-success" type="button" onClick={findByName}>Search</button>
+              <input id="myInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" placeHolder="Search by Name" value={searchName} onChange={onChangeSearchName} onKeyPress={handleKeypress}/>
+              <button id ="myBtn" class="btn btn-outline-success" type="submit" onClick={findByName}>Search</button>
           </form>
-          <div class="page-nav"><a href={prevPage}>&lt; PREV</a> | <a href={nextPage}>NEXT &gt;</a></div>
       <ul class="gallery mw-gallery-traditional">
       {
           pins.map(pin => (
@@ -92,7 +100,7 @@ if (parseInt(page) == 0)  {
           ))
       }
       </ul>
-      <div class="page-nav"><a href={prevPage}>&lt; PREV</a> | <a href={nextPage}>NEXT &gt;</a></div>
+      <div class="page-nav"><a href={prevPage}>&lt; PREV</a> · <a href="/?page=0">0</a> <a href="/?page=1">1</a> <a href="/?page=2">2</a> <a href="/?page=3">3</a> <a href="/?page=4">4</a> <a href="/?page=5">5</a> <a href="/?page=6">6</a> <a href="/?page=7">7</a> <a href="/?page=8">8</a> <a href="/?page=9">9</a> <a href="/?page=10">10</a> <a href="/?page=11">11</a> <a href="/?page=12">12</a> · <a href={nextPage}>NEXT &gt;</a></div>
       </div>
 );
 }
