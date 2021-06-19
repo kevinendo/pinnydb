@@ -24,18 +24,18 @@ const PinsListSubset = props => {
   const pageTitle = props.match.params.query;
 
   return(
-    <div class="mw-content-ltr">
+    <div className="mw-content-ltr">
       <h3>{pageTitle}</h3>
-      <ul class="gallery mw-gallery-traditional">
+      <ul className="gallery mw-gallery-traditional">
       {
           pins.map(pin => (
-            <li class="gallerybox">
-                <div class="pinbox">
-                  <Link to={"/pinDetail/"+pin.pin_id.$numberInt}>
-                    <div class="thumb"><img width="100" src={"https://pinnydb.netlify.app/images/" + pin.category.replace(/ /g, '') + "/" + pin.main_img}/></div>
+            <li key={pin.pin_name} className="gallerybox">
+                <div className="pinbox">
+                  <Link to={"/pinDetail/"+pin.pin_id}>
+                    <div className="thumb"><img alt={pin.pin_name} width="100" src={"/images/" + pin.category.replace(/ /g, '') + "/" + pin.main_img}/></div>
                   
-                    <div class="pinname">{pin.pin_name}</div>
-                    <div class="pinset">{pin.set}</div></Link>
+                    <div className="pinname">{pin.pin_name}</div>
+                    <div className="pinset">{pin.set}</div></Link>
                 </div>
            </li>
           ))

@@ -1,7 +1,6 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import PinsList from "./components/pins-list";
 import PinsListSubset from "./components/pins-list-subset";
 import PinDetail from "./components/pin-detail";
@@ -9,6 +8,12 @@ import GlobalNav from "./components/global-nav";
 import About from "./components/about";
 import ArticleList from "./components/article-list";
 import Article from "./components/article";
+
+const NoMatchPage = () => {
+  return (
+    <h3>404 - Not found</h3>
+  );
+};
 
 function App() {
 
@@ -39,6 +44,7 @@ function App() {
               <PinsListSubset {...props} />
             )}
           />          
+          <Route component={NoMatchPage} />      
         </Switch>
       </div>
       <About/>
