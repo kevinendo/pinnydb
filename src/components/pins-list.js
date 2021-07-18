@@ -58,7 +58,7 @@ if (parseInt(page) === 1)  {
           pins.map(pin => (
             <li key={pin.pin_name} className="gallerybox">
                 <div className="pinbox">
-                  <Link to={"/pinDetail/"+pin.pin_id}>
+                  <Link to={"/pinDetail/"+pin.pin_id.$numberInt}>
                     
                     <div className="thumb"><img alt={pin.pin_name} width="100" src={"/images/" + pin.category.replace(/ /g, '') + "/" + pin.main_img}/></div>
           
