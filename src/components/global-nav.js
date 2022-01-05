@@ -77,7 +77,8 @@ function GlobalNav() {
                 West
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a className="dropdown-item" href="/category/West%2020">2020</a></li>
+                <li><a className="dropdown-item" href="/category/West%2021">2021</a></li>
+                <li><a className="dropdown-item" href="/category/West%2020">2020</a></li>
                 <li><a className="dropdown-item" href="/category/West%2019">2019</a></li>
                 <li><a className="dropdown-item" href="/category/West%2018">2018</a></li>
                 <li><a className="dropdown-item" href="/category/West%2017">2017</a></li>
@@ -92,6 +93,7 @@ function GlobalNav() {
                 East
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-item" href="/category/East%2021">2021</a></li>
                 <li><a className="dropdown-item" href="/category/East%2020">2020</a></li>
                 <li><a className="dropdown-item" href="/category/East%2019">2019</a></li>
                 <li><a className="dropdown-item" href="/category/East%2018">2018</a></li>
@@ -107,7 +109,8 @@ function GlobalNav() {
                 Aus
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a className="dropdown-item" href="/category/Aus%2020">2020</a></li>
+                <li><a className="dropdown-item" href="/category/Aus%2021">2021</a></li>
+                <li><a className="dropdown-item" href="/category/Aus%2020">2020</a></li>
                 <li><a className="dropdown-item" href="/category/Aus%2019">2019</a></li>
                 <li><a className="dropdown-item" href="/category/Aus%2018">2018</a></li>
                 <li><a className="dropdown-item" href="/category/Aus%2017">2017</a></li>
@@ -135,7 +138,8 @@ function GlobalNav() {
                 Unp
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a className="dropdown-item" href="/category/Unplugged%2020">2020</a></li>
+                <li><a className="dropdown-item" href="/category/Unplugged%2021">2021</a></li>
+                <li><a className="dropdown-item" href="/category/Unplugged%2020">2020</a></li>
                 <li><a className="dropdown-item" href="/category/Unplugged%2019">2019</a></li>
                 <li><a className="dropdown-item" href="/category/Unplugged%2018">2018</a></li>
                 <li><a className="dropdown-item" href="/category/Unplugged%2017">2017</a></li>
@@ -146,6 +150,7 @@ function GlobalNav() {
                 PAX
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-item" href="/category/PAX%2021">2021</a></li>
                 <li><a className="dropdown-item" href="/category/PAX%2020">2020</a></li>
                 <li><a className="dropdown-item" href="/category/PAX%2019">2019</a></li>
                 <li><a className="dropdown-item" href="/category/PAX%2018">2018</a></li>
@@ -161,6 +166,7 @@ function GlobalNav() {
                 Other
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-item" href="/category/Other%2022">2022</a></li>
                 <li><a className="dropdown-item" href="/category/Other%2021">2021</a></li>
                 <li><a className="dropdown-item" href="/category/Other%2020">2020</a></li>
                 <li><a className="dropdown-item" href="/category/Other%2019">2019</a></li>

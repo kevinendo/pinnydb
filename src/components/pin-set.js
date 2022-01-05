@@ -24,7 +24,7 @@ function PinSet(props) {
 
   return(
     <div>
-    <div class="set-name">{props.setName}</div> 
+    <div className="set-name">{props.setName}</div> 
       <ul className="gallery mw-gallery-traditional">
       {
           pins.map(pin => (
