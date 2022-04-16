@@ -93,6 +93,7 @@ function GlobalNav() {
                 East
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a className="dropdown-item" href="/category/East%2022">2022</a></li>
                 <li><a className="dropdown-item" href="/category/East%2021">2021</a></li>
                 <li><a className="dropdown-item" href="/category/East%2020">2020</a></li>
                 <li><a className="dropdown-item" href="/category/East%2019">2019</a></li>
@@ -150,6 +151,7 @@ function GlobalNav() {
                 PAX
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a className="dropdown-item" href="/category/PAX%2022">2022</a></li>
                 <li><a className="dropdown-item" href="/category/PAX%2021">2021</a></li>
                 <li><a className="dropdown-item" href="/category/PAX%2020">2020</a></li>
                 <li><a className="dropdown-item" href="/category/PAX%2019">2019</a></li>
